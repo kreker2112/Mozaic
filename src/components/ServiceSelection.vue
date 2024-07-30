@@ -833,7 +833,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .service-selection {
   display: flex;
   flex-direction: column;
@@ -846,18 +846,17 @@ export default {
 
 .service-selection__upper {
   display: flex;
-
   justify-content: space-between;
   background-color: #828282;
   width: 100%;
-  height: 32%;
+  height: 32vh;
 }
 
 .instruments__img {
   position: absolute;
   left: 5%;
   top: 2%;
-  width: 76%;
+  width: 90%;
   transition: transform 2s ease-in-out;
 }
 
@@ -866,32 +865,36 @@ export default {
 }
 
 .checkboxes-container__upper {
+  position: relative;
+  width: 100%;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
-  height: 100%;
 }
 
 .checkboxes__upper {
-  margin-bottom: -5%;
   display: grid;
+  margin-top: 1rem;
   grid-template-columns: repeat(3, 1fr);
-  grid-gap: 10px;
-  width: 85%;
-  padding: 20px;
+  grid-gap: 1rem;
+  width: 90%;
+  height: auto;
   box-sizing: border-box;
+  padding: 1rem;
 }
 
 .checkbox-item__upper {
   display: flex;
   align-items: center;
   font-family: "Montserrat";
+  justify-content: flex-start;
   color: #9e9e9e;
+  font-size: 1em;
 }
 
 .checkbox-item__upper label {
-  font-size: 100%;
+  font-size: 1.2em;
 }
 
 .checkbox-item__upper.checked {
@@ -899,12 +902,13 @@ export default {
 }
 
 .checkbox-item__upper--input {
-  margin-right: 10px;
-  width: 16px;
-  height: 16px;
-  border-radius: 4px;
-  border: 2px solid #9e9e9e;
+  margin-right: 0.5em;
+  width: 1.5em;
+  height: 1.5em;
+  border-radius: 0.45em;
+  border: 0.1em solid #9e9e9e;
   background-color: transparent;
+  -moz-appearance: none;
   appearance: none;
   -webkit-appearance: none;
   position: relative;
@@ -917,8 +921,8 @@ export default {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 20px;
-  height: 20px;
+  width: 1vw;
+  height: 1vw;
   background-image: url("../images/logos/check-icon.png");
   background-size: contain;
   background-repeat: no-repeat;
@@ -939,42 +943,6 @@ export default {
 
 .cases-image {
   height: 95%;
-}
-
-@keyframes bounce {
-  100% {
-    transform: translateY(0);
-  }
-  90% {
-    transform: translateY(-8px);
-  }
-  80% {
-    transform: translateY(-14px);
-  }
-  70% {
-    transform: translateY(-16px);
-  }
-  60% {
-    transform: translateY(-18px);
-  }
-  50% {
-    transform: translateY(-22px);
-  }
-  40% {
-    transform: translateY(-18px);
-  }
-  30% {
-    transform: translateY(-16px);
-  }
-  20% {
-    transform: translateY(-14px);
-  }
-  10% {
-    transform: translateY(-8px);
-  }
-  0% {
-    transform: translateY(0px);
-  }
 }
 
 .service-selection__lower {
@@ -1019,12 +987,10 @@ export default {
 
 .ground-instruction_container {
   position: absolute;
-
   left: 20%;
-
+  bottom: 1rem;
   width: 80%;
   height: 20%;
-
   display: flex;
   justify-content: start;
   align-items: center;
@@ -1032,6 +998,42 @@ export default {
 
 .add {
   z-index: 11;
+}
+
+@keyframes bounce {
+  100% {
+    transform: translateY(0);
+  }
+  90% {
+    transform: translateY(-8px);
+  }
+  80% {
+    transform: translateY(-14px);
+  }
+  70% {
+    transform: translateY(-16px);
+  }
+  60% {
+    transform: translateY(-18px);
+  }
+  50% {
+    transform: translateY(-22px);
+  }
+  40% {
+    transform: translateY(-18px);
+  }
+  30% {
+    transform: translateY(-16px);
+  }
+  20% {
+    transform: translateY(-14px);
+  }
+  10% {
+    transform: translateY(-8px);
+  }
+  0% {
+    transform: translateY(0px);
+  }
 }
 
 .add-arrow {
@@ -1130,12 +1132,12 @@ export default {
 }
 
 .funnel-moving {
-  transform: translateX(140px) translateY(-500px) rotate(60deg);
+  transform: translateX(8vw) translateY(-45vh) rotate(60deg);
 }
 
 .drops-container {
   position: absolute;
-  top: 177px;
+  top: 17.7vh;
   left: 65%;
   transform: translate(-50%, -100%);
   pointer-events: none;
@@ -1143,48 +1145,45 @@ export default {
 }
 
 .drop {
-  left: calc(50% - 40px);
+  left: calc(50% - 4vw);
   animation: drop-fall 3s linear forwards;
   z-index: 1000;
   overflow: hidden;
 }
 
 .drop.one-size {
-  width: 100px;
+  width: 6vw;
   z-index: 1000;
 }
 
 @keyframes drop-fall {
   0% {
     opacity: 1;
-    transform: translateY(0px);
+    transform: translateY(0);
   }
   100% {
     opacity: 0;
-    transform: translateY(300px);
+    transform: translateY(30vh);
   }
-}
-
-.drop-fall-enter-active {
-  transition:
-    transform 4s,
-    opacity 1s;
 }
 
 .tree {
   position: relative;
-  margin-top: 55%;
-  margin-left: 15%;
-  width: 75%;
-  z-index: 100;
+  width: 100%;
+  height: 100%;
+  margin-bottom: 7rem;
+  margin-left: 8rem;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
 }
 
 .coins__container {
   position: absolute;
-  bottom: 130px;
-  right: -4.5%;
-  width: 430px;
-  height: 310px;
+  bottom: 13vh;
+  left: 10vw;
+  width: 21vw;
+  height: 27vh;
   z-index: 100;
   border-radius: 15%;
 }
@@ -1208,11 +1207,8 @@ export default {
 }
 
 .small-tree {
-  position: absolute;
-  bottom: 19%;
-  left: 51%;
-  width: 30%;
-  object-fit: contain;
+  width: 20%;
+  height: auto;
   transform:
     opacity 0.000000001s ease-out,
     transform 0.000000001s ease-out;
@@ -1221,9 +1217,7 @@ export default {
 
 .big-tree {
   position: absolute;
-  bottom: 20%;
-  left: 52%;
-  width: 30%;
+  width: 20%;
   opacity: 0;
   transition:
     transform 2s ease-in-out,
@@ -1294,14 +1288,14 @@ export default {
 .lightbox-content {
   position: relative;
   background: #002d6e;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 2vw;
+  border-radius: 0.8vw;
+  box-shadow: 0 0.2vw 1vw rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 40%;
-  height: calc(100vh - 80px);
+  height: calc(100% - 8vh);
   color: #ededed;
   text-align: center;
   z-index: 10001;
@@ -1309,8 +1303,8 @@ export default {
 
 .lightbox-content h2 {
   font-family: "Montserrat";
-  font-size: 36px;
-  margin-bottom: 60px;
+  font-size: 2vw;
+  margin-bottom: 3vh;
   z-index: 999;
 }
 
@@ -1326,7 +1320,7 @@ export default {
 .lightbox-checkboxes {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-gap: 20px;
+  grid-gap: 0.5vw;
   z-index: 999;
 }
 
@@ -1337,12 +1331,11 @@ export default {
 }
 
 .lightbox__checkbox-item--input {
-  margin-right: 10px;
-
-  width: 20px;
-  height: 20px;
-  border-radius: 4px;
-  border: 2px solid #9e9e9e;
+  margin-right: 1vw;
+  width: 1.5vw;
+  height: 1.5vw;
+  border-radius: 0.4vw;
+  border: 0.2vw solid #9e9e9e;
   background-color: transparent;
   appearance: none;
   -webkit-appearance: none;
@@ -1356,8 +1349,8 @@ export default {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 30px;
-  height: 30px;
+  width: 2vw;
+  height: 2vw;
   background-image: url("../images/logos/check-icon.png");
   background-size: contain;
   background-repeat: no-repeat;
@@ -1367,7 +1360,7 @@ export default {
 
 .lightbox__checkbox-item--label {
   font-family: "Montserrat";
-  font-size: 20px;
+  font-size: 1vw;
   font-weight: 500;
   color: #ededed;
   z-index: 999;
@@ -1405,31 +1398,31 @@ export default {
   flex-direction: column;
   align-items: center;
   width: 100%;
-  margin-top: 40px;
-  margin-bottom: 40px;
+  margin-top: 4vh;
+  margin-bottom: 4vh;
   height: 100%;
 }
 
 .form input {
-  border-radius: 8px;
-  height: 35px;
-  font-size: 16px;
+  border-radius: 0.8vw;
+  height: 3.5vh;
+  font-size: 1.2vw;
   font-family: "Montserrat";
   z-index: 10000;
 }
 
 .form textarea {
-  border-radius: 8px;
-  height: 80px;
-  font-size: 16px;
+  border-radius: 0.8vw;
+  height: 8vh;
+  font-size: 1.2vw;
   font-family: "Montserrat";
   z-index: 10000;
 }
 
 .form button {
-  margin-top: 30px;
-  width: 315px;
-  height: 75px;
+  margin-top: 3vh;
+  width: 20vw;
+  height: 7.5vh;
   background-color: #ff6400;
   color: #ffffff;
 }
@@ -1437,15 +1430,15 @@ export default {
 .form input,
 .form textarea {
   width: 60%;
-  margin: 10px 0;
-  padding: 10px;
+  margin: 1vh 0;
+  padding: 1vh;
 }
 
 .apply-button {
-  font-size: 24px;
+  font-size: 2.4vw;
   font-style: "Montserrat";
-  padding: 9.43px 18.85px;
-  border-radius: 8px;
+  padding: 1vh 2vw;
+  border-radius: 0.8vw;
   border: none;
   cursor: pointer;
   color: #ffffff;
@@ -1455,8 +1448,6 @@ export default {
   visibility: hidden;
   opacity: 0;
 }
-
-/* Стили для вертикальной разметки */
 
 .service-selection--vertical {
   display: flex;
@@ -1475,7 +1466,7 @@ export default {
   position: relative;
   background-color: #828282;
   width: 100%;
-  height: 60%;
+  height: 60vh;
 }
 
 .funnel-image--vertical {
@@ -1491,19 +1482,19 @@ export default {
 }
 
 .funnel-moving--vertical {
-  transform: translateX(-200px) translateY(180px) rotate(-60deg);
+  transform: translateX(-40vw) translateY(38vh) rotate(-60deg);
 }
 
 .drops-container--vertical {
   position: absolute;
-  top: 177px;
+  top: 17.7vh;
   left: 45%;
   transform: translate(-50%, -100%);
   pointer-events: none;
 }
 
 .drop--vertical {
-  left: calc(50% - 40px);
+  left: calc(50% - 4vw);
   animation: drop-fall 3s linear forwards;
 }
 
@@ -1511,9 +1502,10 @@ export default {
   display: flex;
   flex-direction: row;
   width: 100%;
-  height: 60%;
+  height: 60vh;
   z-index: 1;
 }
+
 .instruction-image__container--vertical {
   position: relative;
   display: flex;
@@ -1527,6 +1519,7 @@ export default {
   top: 1%;
   left: 2%;
 }
+
 .service-selection__lower--tree--vertical {
   position: relative;
   width: 82%;
@@ -1536,6 +1529,7 @@ export default {
   justify-content: flex-end;
   z-index: 1;
 }
+
 .ground-container--vertical {
   position: relative;
   height: 40%;
@@ -1549,6 +1543,7 @@ export default {
   width: 100%;
   z-index: 10;
 }
+
 .small-tree__container--vertical {
   position: relative;
   display: flex;
@@ -1594,26 +1589,16 @@ export default {
   animation: growTree 3s ease-in-out forwards;
 }
 
-.coins__container {
-  position: absolute;
-  bottom: 130px;
-  right: -4.5%;
-  width: 430px;
-  height: 310px;
-  z-index: 100;
-  border-radius: 15%;
-}
-
 .business_up--vertical {
-  margin-top: 4%;
-  margin-left: 4%;
+  margin-top: 4vh;
+  margin-left: 4vw;
   width: 29%;
   z-index: 50;
 }
 
 .business_up-arrow--vertical {
-  margin-top: 1%;
-  margin-left: 16%;
+  margin-top: 1vh;
+  margin-left: 1.6vw;
   width: 10%;
   z-index: 50;
 }
@@ -1633,6 +1618,7 @@ export default {
   width: 10%;
   z-index: 50;
 }
+
 .service-selection__lower--cases--vertical {
   position: relative;
   width: 18%;
@@ -1691,7 +1677,7 @@ export default {
 }
 
 .checkbox-item--vertical label {
-  font-size: 90%;
+  font-size: 0.9em;
 }
 
 .checkbox-item--vertical.checked {
@@ -1699,11 +1685,11 @@ export default {
 }
 
 .checkbox-item--vertical input {
-  margin-right: 10px;
-  width: 16px;
-  height: 16px;
-  border-radius: 4px;
-  border: 2px solid #9e9e9e;
+  margin-right: 1vw;
+  width: 1vw;
+  height: 1vw;
+  border-radius: 0.25vw;
+  border: 0.2vw solid #9e9e9e;
   background-color: transparent;
   appearance: none;
   -webkit-appearance: none;
@@ -1717,24 +1703,25 @@ export default {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 20px;
-  height: 20px;
+  width: 1vw;
+  height: 1vw;
   background-image: url("../images/logos/check-icon.png");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
   pointer-events: none;
 }
-@media (max-width: 2560px) {
+
+/* @media (max-width: 2560px) {
   .checkboxes__upper {
     padding-left: 5%;
     gap: 1%;
   }
   .checkbox-item__upper {
-    font-size: 80%;
+    font-size: 0.8em;
   }
   .funnel-moving {
-    transform: translateX(120px) translateY(-350px) rotate(60deg);
+    transform: translateX(12vw) translateY(-35vh) rotate(60deg);
   }
   .business_up {
     bottom: 36%;
@@ -1746,21 +1733,21 @@ export default {
     margin-top: 34%;
   }
   .drops-container {
-    top: 100px;
+    top: 10vh;
   }
   .coins__container {
     position: absolute;
-    bottom: 110px;
-    right: -4.5%;
-    width: 350px;
-    height: 250px;
+    bottom: 11vh;
+    right: -4.5vw;
+    width: 35vw;
+    height: 25vh;
     z-index: 100;
     border-radius: 15%;
   }
   .lightbox-content h2 {
-    margin-top: 1%;
+    margin-top: 1vh;
     font-size: 2rem;
-    margin-bottom: 3%;
+    margin-bottom: 3vh;
   }
   .lightbox-checkboxes {
     grid-gap: 1.5%;
@@ -1769,37 +1756,21 @@ export default {
     font-size: 1rem;
   }
   .form {
-    margin-top: 10%;
-    margin-bottom: 5%;
+    margin-top: 10vh;
+    margin-bottom: 5vh;
   }
   .form input {
-    height: 5%;
+    height: 5vh;
   }
   .form textarea {
-    height: 15%;
+    height: 15vh;
   }
   .form button {
-    margin-top: 10px;
+    margin-top: 1vh;
   }
   .apply-button {
     font-size: 1.2rem;
-    padding: 1rem 2rem;
-  }
-  @keyframes drop-fall {
-    0% {
-      opacity: 1;
-      transform: translateY(0px);
-    }
-    100% {
-      opacity: 0;
-      transform: translateY(150px);
-    }
-  }
-
-  .drop-fall-enter-active {
-    transition:
-      transform 4s,
-      opacity 1s;
+    padding: 1vh 2vw;
   }
 }
 
@@ -1807,14 +1778,14 @@ export default {
   .checkboxes__upper {
     margin-bottom: 0;
     padding-left: 5%;
-    gap: 6% !important;
+    gap: 6%;
   }
   .checkbox-item__upper {
-    font-size: 110% !important;
+    font-size: 1.1em !important;
   }
   .checkbox-item__upper--input {
-    width: 20px;
-    height: 20px;
+    width: 2vw;
+    height: 2vw;
   }
   .grow_buisness-with-mosaic {
     top: 1% !important;
@@ -1842,31 +1813,21 @@ export default {
     margin-top: 38%;
   }
   .funnel-moving {
-    transform: translateX(190px) translateY(-480px) rotate(60deg);
-  }
-  @keyframes drop-fall {
-    0% {
-      opacity: 1;
-      transform: translateY(0px);
-    }
-    100% {
-      opacity: 0.1;
-      transform: translateY(250px);
-    }
+    transform: translateX(19vw) translateY(-48vh) rotate(60deg);
   }
   .drops-container {
-    top: 80px;
+    top: 8vh;
   }
   .coins__container {
     right: -5%;
-    bottom: 160px;
-    width: 500px;
-    height: 370px;
+    bottom: 16vh;
+    width: 50vw;
+    height: 37vh;
   }
   .lightbox-content h2 {
-    margin-top: 1%;
+    margin-top: 1vh;
     font-size: 2.5rem;
-    margin-bottom: 3%;
+    margin-bottom: 3vh;
   }
   .lightbox-checkboxes {
     grid-gap: 1rem;
@@ -1875,31 +1836,40 @@ export default {
     font-size: 1.2rem;
   }
   .form {
-    margin-top: 5%;
-    margin-bottom: 10%;
+    margin-top: 5vh;
+    margin-bottom: 10vh;
   }
   .form input {
-    height: 7%;
+    height: 7vh;
   }
   .form textarea {
-    height: 20%;
+    height: 20vh;
   }
   .form button {
-    margin-top: 5%;
+    margin-top: 5vh;
   }
   .apply-button {
     font-size: 1.2rem;
-    padding: 1rem 2rem;
+    padding: 1vh 2vw;
   }
 }
 
 @media (max-width: 1920px) {
+  .checkboxes-container__upper {
+    justify-content: flex-start;
+  }
   .checkboxes__upper {
-    padding: 2%;
+    padding: 2vw;
     gap: 7%;
   }
-  .checkbox-item__upper {
-    font-size: 120%;
+
+  .checkbox-item__upper input {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  .checkbox-item__upper label {
+    font-size: 1em;
   }
   .grow_buisness-with-mosaic {
     top: 2%;
@@ -1914,29 +1884,19 @@ export default {
   }
 
   .funnel-moving {
-    transform: translateX(140px) translateY(-550px) rotate(60deg);
+    transform: translateX(14vw) translateY(-55vh) rotate(60deg);
   }
   .drops-container {
-    top: 90px;
+    top: 9vh;
   }
   .tree {
     margin-top: 51.5%;
   }
-  @keyframes drop-fall {
-    0% {
-      opacity: 1;
-      transform: translateY(0px);
-    }
-    100% {
-      opacity: 0;
-      transform: translateY(400px);
-    }
-  }
   .coins__container {
-    right: -3.5%;
-    bottom: 140px;
-    width: 420px;
-    height: 280px;
+    right: -3.5vw;
+    bottom: 14vh;
+    width: 42vw;
+    height: 28vh;
   }
 
   .business_up {
@@ -1947,7 +1907,7 @@ export default {
   }
   .lightbox-content h2 {
     font-size: 3rem;
-    margin-bottom: 30px;
+    margin-bottom: 3vh;
   }
   .lightbox-checkboxes {
     grid-gap: 5%;
@@ -1956,19 +1916,19 @@ export default {
     font-size: 1.5rem;
   }
   .form {
-    margin-top: 20%;
-    margin-bottom: 10%;
+    margin-top: 20vh;
+    margin-bottom: 10vh;
   }
   .form input {
-    height: 10%;
+    height: 10vh;
   }
   .form textarea {
-    height: 30%;
+    height: 30vh;
   }
   .form button {
-    margin-top: 40px;
-    width: 250px;
-    height: 80px;
+    margin-top: 4vh;
+    width: 25vw;
+    height: 8vh;
     text-align: center;
   }
   .apply-button {
@@ -1990,27 +1950,17 @@ export default {
     margin-top: 45%;
   }
   .drops-container {
-    top: 100px;
-  }
-  @keyframes drop-fall {
-    0% {
-      opacity: 1;
-      transform: translateY(0px);
-    }
-    100% {
-      opacity: 0;
-      transform: translateY(300px);
-    }
+    top: 10vh;
   }
   .lightbox-content h2 {
-    margin-bottom: 30px;
+    margin-bottom: 3vh;
   }
   .lightbox-checkboxes {
     grid-gap: 3%;
   }
   .form {
-    margin-top: 10%;
-    margin-bottom: 10%;
+    margin-top: 10vh;
+    margin-bottom: 10vh;
   }
 }
 
@@ -2019,7 +1969,7 @@ export default {
     gap: 5% !important;
   }
   .checkbox-item__upper {
-    font-size: 110%;
+    font-size: 1.1em;
   }
   .instruction-image {
     width: 120%;
@@ -2041,34 +1991,24 @@ export default {
     margin-top: 37% !important;
   }
   .funnel-moving {
-    transform: translateX(190px) translateY(-480px) rotate(60deg);
-  }
-  @keyframes drop-fall {
-    0% {
-      opacity: 1;
-      transform: translateY(0px);
-    }
-    100% {
-      opacity: 0.1;
-      transform: translateY(250px);
-    }
+    transform: translateX(19vw) translateY(-48vh) rotate(60deg);
   }
   .drops-container {
-    top: 80px;
+    top: 8vh;
   }
   .tree {
     margin-top: 40%;
   }
   .coins__container {
-    bottom: 140px;
+    bottom: 14vh;
     right: -3%;
-    width: 420px;
-    height: 270px;
+    width: 42vw;
+    height: 27vh;
   }
   .lightbox-content h2 {
-    margin-top: 1%;
+    margin-top: 1vh;
     font-size: 2.5rem;
-    margin-bottom: 3%;
+    margin-bottom: 3vh;
   }
   .lightbox-checkboxes {
     grid-gap: 1rem;
@@ -2077,58 +2017,48 @@ export default {
     font-size: 1.2rem;
   }
   .form {
-    margin-top: 5%;
-    margin-bottom: 10%;
+    margin-top: 5vh;
+    margin-bottom: 10vh;
   }
   .form input {
-    height: 7%;
+    height: 7vh;
   }
   .form textarea {
-    height: 20%;
+    height: 20vh;
   }
   .form button {
-    margin-top: 5%;
+    margin-top: 5vh;
   }
   .apply-button {
     font-size: 1.2rem;
-    padding: 1rem 2rem;
+    padding: 1vh 2vw;
   }
 }
 
 @media only screen and (min-width: 1400px) and (max-width: 1400px) and (min-height: 933px) and (max-height: 933px) {
   .checkboxes__upper {
     margin-left: -10%;
-    padding: 2%;
+    padding: 2vw;
   }
   .checkbox-item__upper {
-    font-size: 80% !important;
+    font-size: 0.8em !important;
   }
   .instruction-image {
     width: 100%;
   }
   .funnel-moving {
-    transform: translateX(120px) translateY(-500px) rotate(60deg);
+    transform: translateX(12vw) translateY(-50vh) rotate(60deg);
   }
   .drops-container {
-    top: 80px;
-  }
-  @keyframes drop-fall {
-    0% {
-      opacity: 1;
-      transform: translateY(0px);
-    }
-    100% {
-      opacity: 0.1;
-      transform: translateY(300px);
-    }
+    top: 8vh;
   }
   .tree {
     margin-top: 63% !important;
   }
   .coins__container {
-    bottom: 100px;
-    width: 320px;
-    height: 220px;
+    bottom: 10vh;
+    width: 32vw;
+    height: 22vh;
   }
   .business_up {
     bottom: 22.5%;
@@ -2138,18 +2068,18 @@ export default {
   }
   .lightbox-content h2 {
     font-size: 2rem;
-    margin-bottom: 5%;
+    margin-bottom: 5vh;
   }
   .lightbox-checkboxes {
     grid-gap: 3%;
   }
   .form {
-    margin-top: 20%;
-    margin-bottom: 10%;
+    margin-top: 20vh;
+    margin-bottom: 10vh;
   }
-}
+} */
 
-@media only screen and (min-width: 1366px) and (max-width: 1366px) and (min-height: 1024px) and (max-height: 1024px) {
+/* @media only screen and (min-width: 1366px) and (max-width: 1366px) and (min-height: 1024px) and (max-height: 1024px) {
   .grow_buisness-with-mosaic {
     top: 2% !important;
     width: 80% !important;
@@ -2161,10 +2091,10 @@ export default {
     grid-gap: 5% !important;
   }
   .checkbox-item__upper label {
-    font-size: 80%;
+    font-size: 0.8em;
   }
   .instruction-image {
-    width: 97%;
+    width: 150%;
   }
   .funnel-circle {
     width: 20%;
@@ -2175,28 +2105,18 @@ export default {
     bottom: 20%;
   }
   .funnel-moving {
-    transform: translateX(120px) translateY(-450px) rotate(60deg);
-  }
-  @keyframes drop-fall {
-    0% {
-      opacity: 1;
-      transform: translateY(0px);
-    }
-    100% {
-      opacity: 0;
-      transform: translateY(310px);
-    }
+    transform: translateX(12vw) translateY(-45vh) rotate(60deg);
   }
   .drops-container {
-    top: 190px;
+    top: 19vh;
   }
   .tree {
     margin-top: 77% !important;
   }
   .coins__container {
-    bottom: 100px;
-    width: 300px;
-    height: 210px;
+    bottom: 10vh;
+    width: 30vw;
+    height: 21vh;
   }
   .business_up {
     bottom: 19%;
@@ -2206,14 +2126,14 @@ export default {
   }
   .lightbox-content h2 {
     font-size: 2.5rem;
-    margin-bottom: 5%;
+    margin-bottom: 5vh;
   }
   .lightbox-checkboxes {
     grid-gap: 3%;
   }
   .form {
-    margin-top: 20%;
-    margin-bottom: 10%;
+    margin-top: 20vh;
+    margin-bottom: 10vh;
   }
 }
 
@@ -2226,16 +2146,16 @@ export default {
     justify-content: start;
   }
   .checkboxes__upper {
-    margin-top: 2%;
-    padding: 2%;
+    margin-top: 2vw;
+    padding: 2vw;
     gap: 2% !important;
   }
   .checkbox-item__upper {
-    font-size: 80%;
+    font-size: 0.8em;
   }
 
   .checkbox-item__upper label {
-    font-size: 80%;
+    font-size: 0.8em;
   }
 
   .instruction-image {
@@ -2246,33 +2166,23 @@ export default {
   }
 
   .funnel-moving {
-    transform: translateX(120px) translateY(-400px) rotate(60deg);
-  }
-  @keyframes drop-fall {
-    0% {
-      opacity: 1;
-      transform: translateY(0px);
-    }
-    100% {
-      opacity: 0.1;
-      transform: translateY(250px);
-    }
+    transform: translateX(12vw) translateY(-40vh) rotate(60deg);
   }
   .drops-container {
-    top: 80px;
+    top: 8vh;
   }
   .tree {
     margin-top: 54% !important;
   }
   .coins__container {
-    bottom: 90px;
-    width: 280px;
-    height: 195px;
+    bottom: 9vh;
+    width: 28vw;
+    height: 19.5vh;
   }
   .lightbox-content h2 {
-    margin-top: 1%;
+    margin-top: 1vh;
     font-size: 2rem;
-    margin-bottom: 3%;
+    margin-bottom: 3vh;
   }
   .lightbox-checkboxes {
     grid-gap: 1.5%;
@@ -2281,18 +2191,18 @@ export default {
     font-size: 1rem;
   }
   .form {
-    margin-top: 10%;
-    margin-bottom: 10%;
+    margin-top: 10vh;
+    margin-bottom: 10vh;
   }
   .form input {
-    height: 5%;
+    height: 5vh;
   }
   .form textarea {
-    height: 15%;
+    height: 15vh;
   }
   .apply-button {
     font-size: 1.2rem;
-    padding: 1rem 2rem;
+    padding: 1vh 2vw;
   }
 }
 
@@ -2308,7 +2218,7 @@ export default {
     grid-gap: 3% !important;
   }
   .checkbox-item__upper label {
-    font-size: 70%;
+    font-size: 0.7em;
   }
   .instruction-image {
     width: 97%;
@@ -2322,28 +2232,18 @@ export default {
     bottom: 20%;
   }
   .funnel-moving {
-    transform: translateX(100px) translateY(-370px) rotate(60deg);
-  }
-  @keyframes drop-fall {
-    0% {
-      opacity: 1;
-      transform: translateY(0px);
-    }
-    100% {
-      opacity: 0;
-      transform: translateY(250px);
-    }
+    transform: translateX(10vw) translateY(-37vh) rotate(60deg);
   }
   .drops-container {
-    top: 70px;
+    top: 7vh;
   }
   .tree {
     margin-top: 63% !important;
   }
   .coins__container {
-    bottom: 90px;
-    width: 250px;
-    height: 180px;
+    bottom: 9vh;
+    width: 25vw;
+    height: 18vh;
   }
   .business_up {
     bottom: 19%;
@@ -2353,7 +2253,7 @@ export default {
   }
   .lightbox-content h2 {
     font-size: 2rem;
-    margin-bottom: 5%;
+    margin-bottom: 5vh;
   }
   .lightbox-checkboxes {
     grid-gap: 3%;
@@ -2362,13 +2262,13 @@ export default {
     font-size: 1rem;
   }
   .form {
-    margin-top: 20%;
-    margin-bottom: 10%;
+    margin-top: 20vh;
+    margin-bottom: 10vh;
   }
   .form button {
-    margin-top: 20px;
+    margin-top: 2vh;
   }
-}
+} */
 
 @media only screen and (min-width: 1024px) and (max-width: 1024px) and (min-height: 1366px) and (max-height: 1366px) {
   .service-selection__upper--vertical {
@@ -2399,7 +2299,7 @@ export default {
     grid-gap: 1%;
   }
   .checkbox-item--vertical label {
-    font-size: 120%;
+    font-size: 1.2rem;
   }
 
   .checkbox-item--vertical.checked {
@@ -2407,12 +2307,12 @@ export default {
     font-weight: bold;
   }
   .checkbox-item--vertical input {
-    width: 28px;
-    height: 28px;
-    border-radius: 8px;
+    width: 1.75rem;
+    height: 1.75rem;
+    border-radius: 0.5rem;
   }
   .funnel-moving--vertical {
-    transform: translateX(-400px) translateY(380px) rotate(-60deg);
+    transform: translateX(-25vw) translateY(27.78vh) rotate(-60deg);
   }
   .small-tree__container--vertical {
     width: 120%;
@@ -2423,11 +2323,11 @@ export default {
   .coins__container {
     left: 20%;
     bottom: 70%;
-    width: 350px;
-    height: 270px;
+    width: 22rem;
+    height: 15.56rem;
   }
   .drops-container--vertical {
-    top: 70px;
+    top: 5rem;
     left: 35%;
   }
   .ground--vertical {
@@ -2448,10 +2348,10 @@ export default {
     width: 60%;
   }
   .lightbox-content {
-    width: 600px;
+    width: 37.5rem;
     height: 90%;
     padding: 0;
-    border-radius: 30px;
+    border-radius: 1.875rem;
     z-index: 803;
   }
 
@@ -2463,7 +2363,7 @@ export default {
   }
 
   .lightbox-checkboxes {
-    grid-gap: 20px;
+    grid-gap: 1.25rem;
   }
   .form {
     margin-top: 10%;
@@ -2471,27 +2371,27 @@ export default {
   .form input {
     width: 80%;
     height: 5%;
-    margin: 10px 0;
-    padding: 10px;
+    margin: 0.625rem 0;
+    padding: 0.625rem;
   }
   .form textarea {
     width: 80%;
     height: 30%;
-    margin: 10px 0;
-    padding: 10px;
+    margin: 0.625rem 0;
+    padding: 0.625rem;
   }
 
   .apply-button {
-    font-size: 24px;
-    padding: 12px 20px;
-    border-radius: 8px;
+    font-size: 1.5rem;
+    padding: 0.75rem 1.25rem;
+    border-radius: 0.5rem;
     border: none;
     cursor: pointer;
     color: #ffffff;
   }
 }
 
-@media only screen and (min-width: 1024px) and (max-width: 1024px) and (min-height: 768px) and (max-height: 768px) {
+/* @media only screen and (min-width: 1024px) and (max-width: 1024px) and (min-height: 768px) and (max-height: 768px) {
   .grow_buisness-with-mosaic {
     top: 2% !important;
     width: 80% !important;
@@ -2503,12 +2403,12 @@ export default {
     grid-gap: 3% !important;
   }
   .checkbox-item__upper input {
-    width: 16px;
-    height: 16px;
-    border-radius: 6px;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 0.375rem;
   }
   .checkbox-item__upper label {
-    font-size: 6%;
+    font-size: 0.375rem;
   }
   .instruction-image {
     width: 97%;
@@ -2522,7 +2422,7 @@ export default {
     bottom: 20%;
   }
   .funnel-moving {
-    transform: translateX(100px) translateY(-370px) rotate(60deg);
+    transform: translateX(6.25rem) translateY(-24.81vh) rotate(60deg);
   }
   @keyframes drop-fall {
     0% {
@@ -2531,19 +2431,19 @@ export default {
     }
     100% {
       opacity: 0;
-      transform: translateY(250px);
+      transform: translateY(15.63vh);
     }
   }
   .drops-container {
-    top: 70px;
+    top: 4.38rem;
   }
   .tree {
     margin-top: 66% !important;
   }
   .coins__container {
-    bottom: 70px;
-    width: 220px;
-    height: 160px;
+    bottom: 4.38rem;
+    width: 13.75rem;
+    height: 10rem;
   }
   .business_up {
     bottom: 20%;
@@ -2572,9 +2472,9 @@ export default {
     height: 13%;
   }
   .form button {
-    margin-top: 20px;
-    width: 270px;
-    height: 60px;
+    margin-top: 1.25rem;
+    width: 16.88rem;
+    height: 3.75rem;
   }
   .apply-button {
     font-size: 1.5rem;
@@ -2594,13 +2494,13 @@ export default {
     grid-gap: 3% !important;
   }
   .checkbox-item__upper label {
-    font-size: 63% !important;
+    font-size: 0.395rem !important;
   }
   .checkbox-item__upper--input {
-    width: 12px;
-    height: 12px;
-    border-radius: 4px;
-    border: 2px solid #9e9e9e;
+    width: 0.75rem;
+    height: 0.75rem;
+    border-radius: 0.25rem;
+    border: 0.125rem solid #9e9e9e;
     background-color: transparent;
     appearance: none;
     -webkit-appearance: none;
@@ -2608,7 +2508,7 @@ export default {
     cursor: pointer;
   }
   .checkbox-item__upper label {
-    font-size: 72%;
+    font-size: 0.45rem;
   }
   .cases-image--vertical {
     width: 60%;
@@ -2624,13 +2524,13 @@ export default {
     width: 33%;
   }
   .funnel-moving {
-    transform: translateX(90px) translateY(-320px) rotate(60deg);
+    transform: translateX(5.63rem) translateY(-20vh) rotate(60deg);
   }
   .drops-container {
-    top: 10px;
+    top: 0.63rem;
   }
   .drop.one-size {
-    width: 60px;
+    width: 3.75rem;
   }
   @keyframes drop-fall {
     0% {
@@ -2639,16 +2539,16 @@ export default {
     }
     100% {
       opacity: 0.1;
-      transform: translateY(230px);
+      transform: translateY(14.38vh);
     }
   }
   .tree {
     margin-top: 45% !important;
   }
   .coins__container {
-    bottom: 80px;
-    width: 225px;
-    height: 150px;
+    bottom: 5rem;
+    width: 14.06rem;
+    height: 9.38rem;
   }
   .business_up {
     bottom: 30%;
@@ -2665,7 +2565,7 @@ export default {
     grid-gap: 3%;
   }
   .lightbox__checkbox-item--label {
-    font-size: 80%;
+    font-size: 0.8rem;
   }
   .form {
     margin-top: 5%;
@@ -2678,15 +2578,15 @@ export default {
     height: 13%;
   }
   .form button {
-    margin-top: 20px;
-    width: 270px;
-    height: 60px;
+    margin-top: 1.25rem;
+    width: 16.88rem;
+    height: 3.75rem;
   }
   .apply-button {
     font-size: 1.5rem;
     padding: 1rem 2rem;
   }
-}
+} */
 
 @media only screen and (min-width: 820px) and (max-width: 820px) and (min-height: 1180px) and (max-height: 1180px) {
   .service-selection__upper--vertical {
@@ -2717,7 +2617,7 @@ export default {
     grid-gap: 1%;
   }
   .checkbox-item--vertical label {
-    font-size: 120%;
+    font-size: 1.2rem;
   }
 
   .checkbox-item--vertical.checked {
@@ -2725,12 +2625,12 @@ export default {
     font-weight: bold;
   }
   .checkbox-item--vertical input {
-    width: 28px;
-    height: 28px;
-    border-radius: 8px;
+    width: 1.75rem;
+    height: 1.75rem;
+    border-radius: 0.5rem;
   }
   .funnel-moving--vertical {
-    transform: translateX(-400px) translateY(380px) rotate(-60deg);
+    transform: translateX(-25vw) translateY(27.78vh) rotate(-60deg);
   }
   .small-tree__container--vertical {
     width: 120%;
@@ -2741,11 +2641,11 @@ export default {
   .coins__container {
     left: 19%;
     bottom: 70%;
-    width: 290px;
-    height: 180px;
+    width: 18.13rem;
+    height: 11.25rem;
   }
   .drops-container--vertical {
-    top: 70px;
+    top: 5rem;
     left: 35%;
   }
   .ground--vertical {
@@ -2763,7 +2663,7 @@ export default {
     transform: rotate(70deg);
   }
   .funnel-moving--vertical {
-    transform: translateX(-330px) translateY(380px) rotate(-60deg);
+    transform: translateX(-20.63vw) translateY(27.78vh) rotate(-60deg);
   }
   .small-tree--vertical {
     bottom: -30%;
@@ -2776,10 +2676,10 @@ export default {
     width: 70%;
   }
   .lightbox-content {
-    width: 600px;
+    width: 37.5rem;
     height: 90%;
     padding: 0;
-    border-radius: 30px;
+    border-radius: 1.875rem;
     z-index: 803;
   }
 
@@ -2791,7 +2691,7 @@ export default {
   }
 
   .lightbox-checkboxes {
-    grid-gap: 20px;
+    grid-gap: 1.25rem;
   }
   .form {
     margin-top: 10%;
@@ -2799,20 +2699,20 @@ export default {
   .form input {
     width: 80%;
     height: 5%;
-    margin: 10px 0;
-    padding: 10px;
+    margin: 0.625rem 0;
+    padding: 0.625rem;
   }
   .form textarea {
     width: 80%;
     height: 30%;
-    margin: 10px 0;
-    padding: 10px;
+    margin: 0.625rem 0;
+    padding: 0.625rem;
   }
 
   .apply-button {
-    font-size: 24px;
-    padding: 12px 20px;
-    border-radius: 8px;
+    font-size: 1.5rem;
+    padding: 0.75rem 1.25rem;
+    border-radius: 0.5rem;
     border: none;
     cursor: pointer;
     color: #ffffff;
@@ -2848,7 +2748,7 @@ export default {
     grid-gap: 1%;
   }
   .checkbox-item--vertical label {
-    font-size: 120%;
+    font-size: 1.2rem;
   }
 
   .checkbox-item--vertical.checked {
@@ -2856,12 +2756,12 @@ export default {
     font-weight: bold;
   }
   .checkbox-item--vertical input {
-    width: 28px;
-    height: 28px;
-    border-radius: 8px;
+    width: 1.75rem;
+    height: 1.75rem;
+    border-radius: 0.5rem;
   }
   .funnel-moving--vertical {
-    transform: translateX(-300px) translateY(250px) rotate(-60deg) !important;
+    transform: translateX(-18.75vw) translateY(17.36vh) rotate(-60deg) !important;
   }
   .small-tree__container--vertical {
     width: 120%;
@@ -2872,11 +2772,11 @@ export default {
   .coins__container {
     left: 19%;
     bottom: 70%;
-    width: 290px;
-    height: 180px;
+    width: 18.13rem;
+    height: 11.25rem;
   }
   .drops-container--vertical {
-    top: 70px;
+    top: 5rem;
     left: 35%;
   }
   .ground--vertical {
@@ -2894,7 +2794,7 @@ export default {
     transform: rotate(70deg);
   }
   .funnel-moving--vertical {
-    transform: translateX(-330px) translateY(380px) rotate(-60deg);
+    transform: translateX(-20.63vw) translateY(27.78vh) rotate(-60deg);
   }
   .small-tree--vertical {
     bottom: -30%;
@@ -2910,10 +2810,10 @@ export default {
     z-index: 10007;
   }
   .lightbox-content {
-    width: 600px;
+    width: 37.5rem;
     height: 75%;
     padding: 0;
-    border-radius: 30px;
+    border-radius: 1.875rem;
     z-index: 900 !important;
   }
 
@@ -2936,26 +2836,26 @@ export default {
   .form input {
     width: 80%;
     height: 10%;
-    margin: 10px 0;
-    padding: 10px;
+    margin: 0.625rem 0;
+    padding: 0.625rem;
   }
   .form textarea {
     width: 80%;
     height: 30%;
-    margin: 5px 0;
-    padding: 10px;
+    margin: 0.313rem 0;
+    padding: 0.625rem;
   }
 
   .form button {
-    margin-top: 20px;
-    width: 270px;
-    height: 60px;
+    margin-top: 1.25rem;
+    width: 16.88rem;
+    height: 3.75rem;
   }
 
   .apply-button {
-    font-size: 24px;
-    padding: 8px 20px;
-    border-radius: 8px;
+    font-size: 1.5rem;
+    padding: 0.5rem 1.25rem;
+    border-radius: 0.5rem;
     border: none;
     cursor: pointer;
     color: #ffffff;
@@ -2988,25 +2888,20 @@ export default {
   }
 
   .checkboxes--vertical {
-    grid-gap: 2px !important;
+    grid-gap: 0.125rem !important;
   }
   .checkbox-item--vertical input {
-    width: 28px;
-    height: 28px;
-    border-radius: 8px;
+    width: 1.75rem;
+    height: 1.75rem;
+    border-radius: 0.5rem;
   }
   .checkbox-item--vertical label {
-    font-size: 85% !important;
+    font-size: 0.85rem !important;
   }
 
   .checkbox-item--vertical.checked {
     color: #1a1614;
     font-weight: bold;
-  }
-  .checkbox-item--vertical input {
-    width: 28px;
-    height: 28px;
-    border-radius: 8px;
   }
   .funnel-image--vertical {
     top: -20% !important;
@@ -3022,11 +2917,11 @@ export default {
   .coins__container {
     left: 20%;
     bottom: 30%;
-    width: 150px;
-    height: 120px;
+    width: 9.38rem;
+    height: 7.5rem;
   }
   .drops-container--vertical {
-    top: 20px;
+    top: 1.25rem;
     left: 35%;
   }
   @keyframes drop-fall {
@@ -3036,7 +2931,7 @@ export default {
     }
     100% {
       opacity: 0.1;
-      transform: translateY(250px);
+      transform: translateY(15.63vh);
     }
   }
   .take-money--vertical {
@@ -3051,7 +2946,7 @@ export default {
     transform: rotate(70deg);
   }
   .funnel-moving--vertical {
-    transform: translateX(-160px) translateY(250px) rotate(-60deg) !important;
+    transform: translateX(-10vw) translateY(17.36vh) rotate(-60deg) !important;
   }
   .small-tree--vertical {
     bottom: -11% !important;
@@ -3072,10 +2967,10 @@ export default {
     align-items: start;
   }
   .lightbox-content {
-    width: 400px !important;
+    width: 25rem !important;
     height: 75%;
     padding: 0;
-    border-radius: 30px;
+    border-radius: 1.875rem;
     z-index: 900 !important;
   }
 
@@ -3098,31 +2993,32 @@ export default {
   .form input {
     width: 80%;
     height: 10%;
-    margin: 10px 0;
-    padding: 10px;
+    margin: 0.625rem 0;
+    padding: 0.625rem;
   }
   .form textarea {
     width: 80%;
     height: 30%;
-    margin: 5px 0;
-    padding: 10px;
+    margin: 0.313rem 0;
+    padding: 0.625rem;
   }
 
   .form button {
-    margin-top: 30px !important;
-    width: 270px;
-    height: 60px;
+    margin-top: 1.88rem !important;
+    width: 16.88rem;
+    height: 3.75rem;
   }
 
   .apply-button {
-    font-size: 24px;
-    padding: 8px 20px;
-    border-radius: 8px;
+    font-size: 1.5rem;
+    padding: 0.5rem 1.25rem;
+    border-radius: 0.5rem;
     border: none;
     cursor: pointer;
     color: #ffffff;
   }
 }
+
 @media (max-width: 430px) {
   .checkboxes-container--vertical {
     left: 2%;
@@ -3136,19 +3032,19 @@ export default {
     grid-gap: 6%;
   }
   .checkbox-item--vertical label {
-    font-size: 110%;
+    font-size: 1.1rem;
   }
   .checkbox-item--vertical input {
-    width: 20px;
-    height: 20px;
-    border-radius: 3px;
+    width: 1.25rem;
+    height: 1.25rem;
+    border-radius: 0.188rem;
   }
   .funnel-container--vertical {
     top: 150%;
     right: 18%;
   }
   .funnel-moving--vertical {
-    transform: translateX(-90px) translateY(-220px) rotate(-60deg);
+    transform: translateX(-5.63vw) translateY(-13.75vh) rotate(-60deg);
   }
   .take-money--vertical {
     top: 43%;
@@ -3163,14 +3059,14 @@ export default {
     bottom: -29%;
   }
   .lightbox-content h2 {
-    font-size: 28px;
-    margin-bottom: 5px;
+    font-size: 1.75rem;
+    margin-bottom: 0.313rem;
   }
 
   .lightbox-checkboxes {
-    font-size: 12px;
+    font-size: 0.75rem;
     width: 50%;
-    grid-gap: 1%;
+    grid-gap: 0.063rem;
     margin-bottom: 5%;
     margin-top: 5%;
   }
@@ -3182,30 +3078,31 @@ export default {
     width: 80%;
   }
   .form input {
-    height: 20px;
+    height: 1.25rem;
   }
 
   .form textarea {
-    height: 40px;
+    height: 2.5rem;
   }
 
   .form button {
-    margin-top: 2px;
-    width: 300px;
-    height: 48px;
+    margin-top: 0.125rem;
+    width: 18.75rem;
+    height: 3rem;
     background-color: #ff6400;
     color: #ffffff;
   }
 
   .apply-button {
-    font-size: 24px;
-    padding: 12px 20px;
-    border-radius: 8px;
+    font-size: 1.5rem;
+    padding: 0.75rem 1.25rem;
+    border-radius: 0.5rem;
     border: none;
     cursor: pointer;
     color: #ffffff;
   }
 }
+
 @media (max-width: 414px) {
   .checkboxes-container--vertical {
     left: -6% !important;
@@ -3217,29 +3114,29 @@ export default {
     grid-gap: 8% !important;
   }
   .checkbox-item--vertical label {
-    font-size: 80% !important;
+    font-size: 0.8rem !important;
   }
   .checkbox-item--vertical input {
-    width: 20px;
-    height: 20px;
-    border-radius: 3px;
+    width: 1.25rem;
+    height: 1.25rem;
+    border-radius: 0.188rem;
   }
   .funnel-container--vertical {
     top: 147%;
     right: 16.5%;
   }
   .funnel-moving--vertical {
-    transform: translateX(-120px) translateY(200px) rotate(-60deg) !important;
+    transform: translateX(-7.5vw) translateY(12.5vh) rotate(-60deg) !important;
   }
   .lightbox-content h2 {
-    font-size: 24px !important;
-    margin-bottom: 5px;
+    font-size: 1.5rem !important;
+    margin-bottom: 0.313rem;
   }
 
   .lightbox-checkboxes {
-    font-size: 12px;
+    font-size: 0.75rem;
     width: 50%;
-    grid-gap: 1%;
+    grid-gap: 0.063rem;
     margin-bottom: 5%;
     margin-top: 5%;
   }
@@ -3251,25 +3148,25 @@ export default {
     width: 80%;
   }
   .form input {
-    height: 20px;
+    height: 1.25rem;
   }
 
   .form textarea {
-    height: 40px;
+    height: 2.5rem;
   }
 
   .form button {
-    margin-top: 20px !important;
-    width: 300px;
-    height: 48px;
+    margin-top: 1.25rem !important;
+    width: 18.75rem;
+    height: 3rem;
     background-color: #ff6400;
     color: #ffffff;
   }
 
   .apply-button {
-    font-size: 24px;
-    padding: 12px 20px;
-    border-radius: 8px;
+    font-size: 1.5rem;
+    padding: 0.75rem 1.25rem;
+    border-radius: 0.5rem;
     border: none;
     cursor: pointer;
     color: #ffffff;
@@ -3278,17 +3175,19 @@ export default {
     width: 80%;
   }
 }
+
 @media (max-width: 412px) {
   .checkboxes-container--vertical {
     top: 30% !important;
   }
   .checkbox-item--vertical label {
-    font-size: 75% !important;
+    font-size: 0.75rem !important;
   }
   .big-tree--vertical {
     bottom: -10% !important;
   }
 }
+
 @media (max-width: 390px) {
   .checkboxes-container--vertical {
     left: 2%;
@@ -3302,12 +3201,12 @@ export default {
     grid-gap: 9% !important;
   }
   .checkbox-item--vertical label {
-    font-size: 80% !important;
+    font-size: 0.8rem !important;
   }
   .checkbox-item--vertical input {
-    width: 16px;
-    height: 16px;
-    border-radius: 3px;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 0.188rem;
   }
   .funnel-container--vertical {
     top: 140%;
@@ -3321,62 +3220,63 @@ export default {
     left: 43%;
   }
   .funnel-moving--vertical {
-    transform: translateX(-80px) translateY(-190px) rotate(-60deg);
+    transform: translateX(-5vw) translateY(-11.88vh) rotate(-60deg);
   }
 
   .lightbox-content {
-    width: 380px !important;
+    width: 23.75rem !important;
   }
 
   .lightbox-content h2 {
     padding: 0 1%;
-    font-size: 22px !important;
-    margin-bottom: 5px;
+    font-size: 1.375rem !important;
+    margin-bottom: 0.313rem;
   }
 
   .lightbox-checkboxes {
-    margin-top: 2%;
-    margin-bottom: 2%;
-    font-size: 12px;
+    margin-top: 1.25%;
+    margin-bottom: 1.25%;
+    font-size: 0.75rem;
     width: 50%;
-    grid-gap: 1%;
+    grid-gap: 0.063rem;
   }
 
   .lightbox-checkboxes label {
     font-size: 1.1rem !important;
   }
   .form {
-    margin-top: 4%;
+    margin-top: 2.5%;
   }
   .form input,
   .form textarea {
     width: 80%;
   }
   .form input {
-    height: 20px;
+    height: 1.25rem;
   }
 
   .form textarea {
-    height: 40px;
+    height: 2.5rem;
   }
 
   .form button {
-    margin-top: 10px !important;
-    width: 300px;
-    height: 48px;
+    margin-top: 0.625rem !important;
+    width: 18.75rem;
+    height: 3rem;
     background-color: #ff6400;
     color: #ffffff;
   }
 
   .apply-button {
-    font-size: 24px;
-    padding: 12px 20px;
-    border-radius: 8px;
+    font-size: 1.5rem;
+    padding: 0.75rem 1.25rem;
+    border-radius: 0.5rem;
     border: none;
     cursor: pointer;
     color: #ffffff;
   }
 }
+
 @media (max-width: 375px) {
   .checkboxes-container--vertical {
     left: 1%;
@@ -3389,12 +3289,12 @@ export default {
     grid-gap: 5% !important;
   }
   .checkbox-item--vertical label {
-    font-size: 70% !important;
+    font-size: 0.7rem !important;
   }
   .checkbox-item--vertical input {
-    width: 16px;
-    height: 16px;
-    border-radius: 3px;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 0.188rem;
   }
   .funnel-container--vertical {
     top: 150% !important;
@@ -3404,10 +3304,10 @@ export default {
     width: 80%;
   }
   .funnel-moving--vertical {
-    transform: translateX(-120px) translateY(150px) rotate(-60deg) !important;
+    transform: translateX(-7.5vw) translateY(9.38vh) rotate(-60deg) !important;
   }
   .drops-container--vertical {
-    top: 70px;
+    top: 5rem;
     left: 35%;
   }
   @keyframes drop-fall {
@@ -3417,7 +3317,7 @@ export default {
     }
     100% {
       opacity: 0.1;
-      transform: translateY(150px);
+      transform: translateY(9.38vh);
     }
   }
   .small-tree--vertical {
@@ -3429,8 +3329,8 @@ export default {
   .coins__container {
     left: 20%;
     bottom: 70%;
-    width: 130px;
-    height: 90px;
+    width: 8.13rem;
+    height: 5.63rem;
   }
   .take-money--vertical {
     right: 10%;
@@ -3440,7 +3340,7 @@ export default {
   .take-money__arrow--vertical {
     top: 49%;
     left: 60% !important;
-    width: 8%;
+    width: 0.5rem;
   }
   .ground--vertical {
     bottom: -5%;
@@ -3449,23 +3349,23 @@ export default {
     width: 60%;
   }
   .lightbox-content h2 {
-    font-size: 16px !important;
+    font-size: 1rem !important;
     text-align: center;
     margin: 1% auto;
   }
 
   .lightbox-checkboxes {
-    font-size: 12px;
+    font-size: 0.75rem;
     width: 50%;
-    grid-gap: 1%;
-    margin-bottom: 1%;
-    margin-top: 2%;
+    grid-gap: 0.063rem;
+    margin-bottom: 0.063rem;
+    margin-top: 1.25%;
   }
 
   .lightbox-checkboxes input {
-    width: 16px;
-    height: 16px;
-    border-radius: 3px;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 0.188rem;
   }
 
   .lightbox-checkboxes label {
@@ -3477,16 +3377,17 @@ export default {
     width: 80%;
   }
   .form input {
-    height: 18px;
+    height: 1.125rem;
   }
 
   .form textarea {
-    height: 35px;
+    height: 2.188rem;
   }
   .form button {
-    margin-top: 5px !important;
+    margin-top: 0.313rem !important;
   }
 }
+
 @media (max-width: 360px) {
   .checkboxes-container--vertical {
     left: 1%;
@@ -3501,12 +3402,12 @@ export default {
     grid-gap: 10%;
   }
   .checkbox-item--vertical label {
-    font-size: 65% !important;
+    font-size: 0.65rem !important;
   }
   .checkbox-item--vertical input {
-    width: 18px;
-    height: 18px;
-    border-radius: 3px;
+    width: 1.125rem;
+    height: 1.125rem;
+    border-radius: 0.188rem;
   }
   .funnel-container--vertical {
     top: 140%;
@@ -3519,7 +3420,7 @@ export default {
     top: 58%;
   }
   .funnel-moving--vertical {
-    transform: translateX(-80px) translateY(-200px) rotate(-60deg);
+    transform: translateX(-5vw) translateY(-12.5vh) rotate(-60deg);
   }
   .ground--vertical {
     bottom: -3%;
@@ -3533,21 +3434,21 @@ export default {
   .coins__container {
     left: 20% !important;
     bottom: 40% !important;
-    width: 130px !important;
-    height: 90px !important;
+    width: 8.13rem !important;
+    height: 5.63rem !important;
   }
   .lightbox-content h2 {
-    margin-top: 20px;
-    font-size: 20px !important;
-    margin-bottom: 5px;
+    margin-top: 1.25rem;
+    font-size: 1.25rem !important;
+    margin-bottom: 0.313rem;
   }
 
   .lightbox-checkboxes {
-    font-size: 12px;
+    font-size: 0.75rem;
     width: 50%;
-    grid-gap: 1.5%;
-    margin-bottom: 9%;
-    margin-top: 4%;
+    grid-gap: 0.094rem;
+    margin-bottom: 5.63%;
+    margin-top: 2.5%;
   }
   .form {
     margin-top: 1%;
@@ -3557,25 +3458,25 @@ export default {
     width: 80%;
   }
   .form input {
-    height: 20px;
+    height: 1.25rem;
   }
 
   .form textarea {
-    height: 40px;
+    height: 2.5rem;
   }
 
   .form button {
-    margin-top: 9px !important;
-    width: 300px;
-    height: 48px;
+    margin-top: 0.563rem !important;
+    width: 18.75rem;
+    height: 3rem;
     background-color: #ff6400;
     color: #ffffff;
   }
 
   .apply-button {
-    font-size: 24px;
-    padding: 12px 20px;
-    border-radius: 8px;
+    font-size: 1.5rem;
+    padding: 0.75rem 1.25rem;
+    border-radius: 0.5rem;
     border: none;
     cursor: pointer;
     color: #ffffff;
