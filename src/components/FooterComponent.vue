@@ -110,6 +110,12 @@ export default {};
   }
 }
 
+@media (max-width: 1600px) {
+  .center a {
+    font-size: 90%;
+  }
+}
+
 @media (max-width: 1400px) {
   .center a {
     font-size: 80%;

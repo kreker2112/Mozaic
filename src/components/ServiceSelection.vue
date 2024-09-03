@@ -2033,9 +2033,82 @@ export default {
     font-size: 1.2rem;
     padding: 1vh 2vw;
   }
+} */
+
+@media (max-width: 1600px) {
+  .checkboxes__upper {
+    padding-left: 4%;
+    gap: 2%;
+  }
+
+  .checkbox-item__upper {
+    font-size: 0.9em;
+  }
+
+  .funnel-moving {
+    transform: translateX(10vw) translateY(-40vh) rotate(60deg);
+  }
+
+  .business_up {
+    bottom: 30%;
+  }
+
+  .business_up-arrow {
+    bottom: 45%;
+  }
+
+  .tree {
+    margin-top: 48%;
+  }
+
+  .drops-container {
+    top: 12vh;
+  }
+
+  .coins__container {
+    bottom: 10vh;
+    width: 28vw;
+    height: 22vh;
+  }
+
+  .lightbox-content h2 {
+    margin-top: 1vh;
+    font-size: 2rem;
+    margin-bottom: 3vh;
+  }
+
+  .lightbox-checkboxes {
+    grid-gap: 2%;
+  }
+
+  .lightbox__checkbox-item--label {
+    font-size: 1.3rem;
+  }
+
+  .form {
+    margin-top: 15vh;
+    margin-bottom: 7vh;
+  }
+
+  .form input {
+    height: 7vh;
+  }
+
+  .form textarea {
+    height: 22vh;
+  }
+
+  .form button {
+    margin-top: 3vh;
+  }
+
+  .apply-button {
+    font-size: 1.5rem;
+    padding: 1vh 1.5vw;
+  }
 }
 
-@media only screen and (min-width: 1400px) and (max-width: 1400px) and (min-height: 933px) and (max-height: 933px) {
+/*@media only screen and (min-width: 1400px) and (max-width: 1400px) and (min-height: 933px) and (max-height: 933px) {
   .checkboxes__upper {
     margin-left: -10%;
     padding: 2vw;
